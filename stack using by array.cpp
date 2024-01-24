@@ -7,6 +7,13 @@ struct stack {
 
 };
 
+void  create(stack* st) {
+	printf("Enter the Array's size:");
+	scanf_s("%d", &st.size);
+	st.s = new int[st.size];
+	st.top = -1;
+}
+
 int stackTop(stack st) {
 	if (st.top == -1)
 		return -1;
@@ -65,10 +72,8 @@ int peek(stack st, int pos) {
 }
 int main() {
 	stack st;
-	printf("Enter the Array's size:");
-	scanf_s("%d", &st.size);
-	st.s = new int[st.size];
-	st.top = -1;
+	create(&st);
+
 
 	push(&st, 5);
 	push(&st, 15);
