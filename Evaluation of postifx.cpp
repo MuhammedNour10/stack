@@ -3,13 +3,21 @@
 #include<stack>
 
 using namespace std;
+//convert infix to postifx
 char* convert(char* infix);
+//check is char is operand or not
 bool isOperand(char x);
+//compare between two operator
 int pre(char x);
+
+//evalue the postfix
 int evaluate(char* postfix);
+
 int main() {
 	char infix[] = "3*5+6/2-4";
+
 	char* postfix = convert(infix);
+	cout << "postfix expression:";
 	for (int i = 0;postfix[i] != '\0';i++)
 		cout << postfix[i] << " ";
 	cout << endl;
@@ -86,5 +94,5 @@ int evaluate(char* postfix) {
 		}
 	}
 	st.pop();
-	return  r;
+	return  r;	
 }
